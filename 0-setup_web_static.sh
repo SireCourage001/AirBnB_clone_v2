@@ -13,8 +13,8 @@ chown -R ubuntu /data/
 chgrp -R ubuntu /data/
 
 printf %s "server {
-    listen 80 default_server;
-    listen [::]:80 default_server;
+    listen 80 web-01 52.87.229.242;
+    listen [::]:80 web-02 52.3.241.114;
     add_header X-Served-By $HOSTNAME;
     root   /var/www/html;
     index  index.html index.htm;
@@ -36,3 +36,4 @@ printf %s "server {
 }" > /etc/nginx/sites-available/default
 
 service nginx restart
+
